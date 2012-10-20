@@ -1,0 +1,10 @@
+-*- coding: utf-8 -*-
+
+2012-10-19
+
+Xah's AutoHotkey scripts.
+
+See also:
+
+〈Windows Programing: AutoHotkey Tutorial〉
+http://xahlee.info/mswin/autohotkey.html
