@@ -13,8 +13,9 @@ If WinExist("ahk_class Emacs")
 }
 Else
 {
-  Run "c:\Users\h3\apps\emacs-24.2\bin\runemacs.exe"
-  ; Run "C:\Users\Public\Desktop\ErgoEmacs.lnk"
+  ; Run "c:\Users\h3\apps\emacs-24.2\bin\runemacs.exe"
+  Run "%home%\apps\emacs-24.2\bin\runemacs.exe"
+  ; Run "C:\Users\Public\Desktop\gnu emacs 24.2.1 ergoemacs dev"
   WinWait ahk_class Emacs
   WinActivate
 }
