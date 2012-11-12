@@ -375,3 +375,9 @@ NumpadSub::Send ^w ; close window
 #IfWinActive ahk_class mintty
 
 F6::Send SbapCW2
+
+
+; § --------------------------------------------------
+;;  Windows PowerShell
+#IfWinActive ahk_class ConsoleWindowClass
+F6::Send .\apps\emacs-24.2\bin\runemacs.exe
