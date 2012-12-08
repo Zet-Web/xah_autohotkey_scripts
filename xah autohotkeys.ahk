@@ -1,12 +1,12 @@
 ; -*- coding: utf-8 -*-
-; 2011-06-21, …, 2012-04-25
+; 2011-06-21, …, 2012-12-01
 ; Xah Lee's autohotkey set
 ; See:
 ; http://xahlee.info/mswin/autohotkey.html
 ; http://xahlee.info/mswin/autohotkey_key_notations.html
 ; http://xahlee.info/mswin/autohotkey_examples.html
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;;; global ahk script settings
 #SingleInstance force
 SetTitleMatchMode, 2
@@ -15,7 +15,7 @@ DetectHiddenWindows, on
 SetNumLockState, on
 SetCapsLockState, off
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ; global hotkeys
 
 CapsLock::Return
@@ -34,10 +34,11 @@ $#NumpadSub::Send {Volume_Down 5} ; decrease sound level
 
 $#Del::FileRecycleEmpty ; Win+Del to empty trash (recycle bin)
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ; global hotkeys that start with Win key
 
 ~LWin Up::Return ; disable Win key behavior of popping up the Start Menu, but still allow Win+‹key› combination.
+~RWin Up::Return ; disable Win key behavior of popping up the Start Menu, but still allow Win+‹key› combination.
 
 ; ; disable the bunch of launch app keys. Because it change keys whenever you add or delete a icon there.
 ; #1::Return
@@ -65,7 +66,7 @@ $#Del::FileRecycleEmpty ; Win+Del to empty trash (recycle bin)
 ; $#Left::Return ; disable window resize
 ; $#Right::Return ; disable window resize
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; emacs
 #IfWinActive ahk_class Emacs
 
@@ -76,7 +77,7 @@ $F2::Send {F2}
 $F3::Send {F3}
 $F4::Send {F4}
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; Mozilla Firefox
 
 #IfWinActive ahk_class MozillaWindowClass
@@ -91,8 +92,6 @@ $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
 
-$Numpad8::Send {F5} ; refresh
-
 ; open new tab and paste in url, go there
 Numpad9::
 {
@@ -104,7 +103,7 @@ Send {Enter}
 }
 Return
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; google chrome
 
 ; on 2010-02-01, google chrome's class
@@ -129,8 +128,6 @@ $F1::Send ^a ; select all
 
 NumpadSub::Send ^w ; close window
 
-$Numpad8::Send {F5} ; refresh
-
 ; open new tab and paste in url, go there
 Numpad9::
 {
@@ -142,7 +139,7 @@ Send {Enter}
 }
 Return
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; Windows Internet Explorer (IE)
 
 #IfWinActive ahk_class IEFrame
@@ -158,8 +155,6 @@ NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
 NumpadSub::Send ^w ; close window
 
-$Numpad8::Send {F5} ; refresh
-
 ; open new tab and paste in url, go there
 Numpad9::
 {
@@ -171,7 +166,7 @@ Send {Enter}
 }
 Return
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; Windows Explorer (desktop)
 #IfWinActive ahk_class CabinetWClass
 
@@ -187,7 +182,7 @@ NumpadMult::Send !{Tab} ; switch to previous app
 
 NumpadSub::Send ^w ; close window
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; image IrfanView hotkeys for fullscreen mode
 #IfWinActive ahk_class FullScreenClass
 
@@ -210,7 +205,7 @@ Numpad0::Send ^m ; switch random img.
 
 NumpadSub::Send {Esc} ; close image
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; IrfanView hotkeys
 #IfWinActive ahk_class IrfanView
 
@@ -222,7 +217,7 @@ Numpad0::Send ^m ; switch random img.
 
 NumpadSub::Send {Esc} ; close image
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; Opera
 #IfWinActive ahk_class OperaWindowClass
 
@@ -239,8 +234,6 @@ $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
 
-$Numpad8::Send {F5} ; refresh
-
 ; open new tab and paste in url, go there
 Numpad9::
 {
@@ -252,7 +245,7 @@ Send {Enter}
 }
 Return
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; safari
 #IfWinActive ahk_class {1C03B488-D53B-4a81-97F8-754559640193}
 
@@ -268,8 +261,6 @@ $F1::Send ^a ; select all
 
 NumpadSub::Send ^w ; close window
 
-$Numpad8::Send {F5} ; refresh
-
 ; open new tab and paste in url, go there
 Numpad9::
 {
@@ -283,7 +274,7 @@ Send {Enter}
 }
 Return
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; gimp
 #IfWinActive ahk_class gdkWindowToplevel 
 
@@ -293,7 +284,7 @@ NumpadMult::Send ^{Tab} ; next tab
 $XButton2::Send ^w ; close
 NumpadSub::Send ^w ; close window
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; Second Life
 
 ; if WinActive("ahk_class Second Life") or WinActive("ahk_class Imprudence")
@@ -347,7 +338,7 @@ F12::Send ^i ; show/hide inventory
 
 \::Send m ; toggle mouse look
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; Google Earth, Oracle VM VirtualBox
 
 ; #IfWinActive ahk_class QWidget
@@ -359,7 +350,7 @@ F12::Send ^i ; show/hide inventory
 ; $RButton::MButton
 ; $MButton::RButton
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; Mathematica hotkeys
 #IfWinActive ahk_class NotebookFrame
 
@@ -370,14 +361,14 @@ Insert::Send ^{F6} ; insert switches window
 
 NumpadSub::Send ^w ; close window
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;; cygwin, mintty
 #IfWinActive ahk_class mintty
 
 F6::Send SbapCW2
 
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;;  Windows PowerShell
 #IfWinActive ahk_class ConsoleWindowClass
 F6::Send .\apps\emacs-24.2\bin\runemacs.exe

@@ -26,7 +26,7 @@
 
 SetTitleMatchMode, 2
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ;;; global ahk script settings
 #SingleInstance force
 DetectHiddenWindows, on
@@ -35,14 +35,14 @@ SetTitleMatchMode, 2
 SetNumLockState, on
 SetCapsLockState, off
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 ; wasd set
 
 CapsLock::Send ^!+9 ; show hide volume (objects)
 Tab::Send ^+r ; show hide wireframe
 LShift::Send ^+r ; show hide wireframe
 
-; § --------------------------------------------------
+;────────── ────────── ────────── ────────── ──────────
 
 ; F1::
 ; alt := not alt
