@@ -12,7 +12,7 @@
 SetTitleMatchMode, 2
 
 DetectHiddenWindows, on
-SetNumLockState, on
+; SetNumLockState, on
 SetCapsLockState, off
 
 ;────────── ────────── ────────── ────────── ──────────
@@ -86,6 +86,10 @@ NumpadDiv::Send ^{PgUp} ; previous tab
 NumpadMult::Send ^{PgDn} ; next tab
 NumpadSub::Send ^w ; close window
 
+F11::Send ^{PgUp} ; previous tab
+F12::Send ^{PgDn} ; next tab
+F10::Send ^w ; close window
+
 $RButton::Send {MButton}
 $MButton::Send {RButton}
 $XButton2::Send ^w ; close
@@ -114,8 +118,14 @@ Return
 ; on 2012-05-21, it's Chrome_WidgetWin_1
 
 #IfWinActive ahk_class Chrome_WidgetWin_1
+
 NumpadDiv::Send ^{PgUp} ; previous tab
 NumpadMult::Send ^{PgDn} ; next tab
+NumpadSub::Send ^w ; close window
+
+F11::Send ^{PgUp} ; previous tab
+F12::Send ^{PgDn} ; next tab
+F10::Send ^w ; close window
 
 $Insert::WinActivateBottom, ahk_class Chrome_WidgetWin_1
 
@@ -125,8 +135,6 @@ $MButton::Send {RButton}
 $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
-
-NumpadSub::Send ^w ; close window
 
 ; open new tab and paste in url, go there
 Numpad9::
@@ -154,6 +162,10 @@ $F1::Send ^a ; select all
 NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
 NumpadSub::Send ^w ; close window
+
+F11::Send ^{PgUp} ; previous tab
+F12::Send ^{PgDn} ; next tab
+F10::Send ^w ; close window
 
 ; open new tab and paste in url, go there
 Numpad9::
@@ -189,15 +201,15 @@ NumpadSub::Send ^w ; close window
 ; $LButton::Send ^m ; switch random img.
 ; $WheelUp::Send ^m ; switch random img.
 
-$RButton::Send ^m ; switch random img.
-
-$XButton1::Send {Del} ; delete img.
+$RButton::Send ^m               ; switch random img.
+$XButton1::Send {F7}            ; put to folder
 $XButton2::Send {Esc} ; close
 
 $\::Send {F7} ; put to folder
 $NumpadDot::Send {F7} ; put to folder
 
 Numpad0::Send ^m ; switch random img.
+]::Send ^m ; switch random img.
 
 ; Numpad7::Send - ; zoom out
 ; Numpad8::Send ^h ; original size
@@ -225,7 +237,9 @@ NumpadDiv::Send ^+{F6} ; previous tab
 NumpadMult::Send ^{F6} ; next tab
 NumpadSub::Send ^w ; close window
 
-F6::Send !d ; put focus on URL field
+F11::Send ^{PgUp} ; previous tab
+F12::Send ^{PgDn} ; next tab
+F10::Send ^w ; close window
 
 $RButton::Send {MButton}
 $MButton::Send {RButton}
@@ -239,35 +253,6 @@ Numpad9::
 {
 Send ^t
 sleep 200
-Send ^v
-sleep 100
-Send {Enter}
-}
-Return
-
-;────────── ────────── ────────── ────────── ──────────
-;; safari
-#IfWinActive ahk_class {1C03B488-D53B-4a81-97F8-754559640193}
-
-NumpadDiv::Send ^+{Tab} ; previous tab
-NumpadMult::Send ^{Tab} ; next tab
-
-$RButton::Send {MButton}
-$MButton::Send {RButton}
-
-$XButton2::Send ^w ; close
-
-$F1::Send ^a ; select all
-
-NumpadSub::Send ^w ; close window
-
-; open new tab and paste in url, go there
-Numpad9::
-{
-Send ^t
-sleep 200
-Send !d
-sleep 100
 Send ^v
 sleep 100
 Send {Enter}
@@ -280,9 +265,13 @@ Return
 
 NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
+NumpadSub::Send ^w ; close window
+
+F11::Send ^{PgUp} ; previous tab
+F12::Send ^{PgDn} ; next tab
+F10::Send ^w ; close window
 
 $XButton2::Send ^w ; close
-NumpadSub::Send ^w ; close window
 
 ;────────── ────────── ────────── ────────── ──────────
 ;; Second Life
