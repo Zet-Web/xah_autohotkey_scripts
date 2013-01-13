@@ -13,19 +13,22 @@ SetTitleMatchMode, 2
 
 DetectHiddenWindows, on
 ; SetNumLockState, on
-SetCapsLockState, off
+; SetCapsLockState, off
 
 ;────────── ────────── ────────── ────────── ──────────
 ; global hotkeys
 
-CapsLock::Return
+; CapsLock::Return
 
 $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
-$F9::Run "launch or switch emacs.ahk"
-$F10::Run "launch or switch firefox.ahk"
+; $F9::Run "launch or switch emacs.ahk"
+; $F10::Run "launch or switch firefox.ahk"
+
+$HOME::Run "window next.ahk"
+$END::Run "window previous.ahk"
 
 $NumpadAdd::Send !{Tab} ; switch to previous app
 
@@ -70,11 +73,11 @@ $#Del::FileRecycleEmpty ; Win+Del to empty trash (recycle bin)
 ;; emacs
 #IfWinActive ahk_class Emacs
 
-CapsLock::Send ^2 ; 
+; CapsLock::Send ^2 ; 
 
 ; cut copy paste, in ergoemacs keybinding with dvorak layout
 $F2::Send {F2}
-$F3::Send {F3}
+; $F3::Send {F3}
 $F4::Send {F4}
 
 ;────────── ────────── ────────── ────────── ──────────
@@ -98,6 +101,17 @@ $F1::Send ^a ; select all
 
 ; open new tab and paste in url, go there
 Numpad9::
+{
+Send ^t
+sleep 200
+Send ^v
+sleep 100
+Send {Enter}
+}
+Return
+
+; open new tab and paste in url, go there
+$^F9::
 {
 Send ^t
 sleep 200
@@ -147,6 +161,18 @@ Send {Enter}
 }
 Return
 
+; open new tab and paste in url, go there
+$^F9::
+{
+Send ^t
+sleep 200
+Send ^v
+sleep 100
+Send {Enter}
+}
+Return
+
+
 ;────────── ────────── ────────── ────────── ──────────
 ;; Windows Internet Explorer (IE)
 
@@ -177,6 +203,18 @@ sleep 100
 Send {Enter}
 }
 Return
+
+; open new tab and paste in url, go there
+$^F9::
+{
+Send ^t
+sleep 200
+Send ^v
+sleep 100
+Send {Enter}
+}
+Return
+
 
 ;────────── ────────── ────────── ────────── ──────────
 ;; Windows Explorer (desktop)
@@ -209,7 +247,7 @@ $\::Send {F7} ; put to folder
 $NumpadDot::Send {F7} ; put to folder
 
 Numpad0::Send ^m ; switch random img.
-]::Send ^m ; switch random img.
+m::Send ^m ; switch random img.
 
 ; Numpad7::Send - ; zoom out
 ; Numpad8::Send ^h ; original size
@@ -258,6 +296,18 @@ sleep 100
 Send {Enter}
 }
 Return
+
+; open new tab and paste in url, go there
+$^F9::
+{
+Send ^t
+sleep 200
+Send ^v
+sleep 100
+Send {Enter}
+}
+Return
+
 
 ;────────── ────────── ────────── ────────── ──────────
 ;; gimp
