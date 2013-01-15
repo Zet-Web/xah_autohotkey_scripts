@@ -24,11 +24,12 @@ $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
+LWin::AppsKey
+RWin::AppsKey
+
+
 ; $F9::Run "launch or switch emacs.ahk"
 ; $F10::Run "launch or switch firefox.ahk"
-
-$HOME::Run "window next.ahk"
-$END::Run "window previous.ahk"
 
 $NumpadAdd::Send !{Tab} ; switch to previous app
 
@@ -73,11 +74,11 @@ $#Del::FileRecycleEmpty ; Win+Del to empty trash (recycle bin)
 ;; emacs
 #IfWinActive ahk_class Emacs
 
-; CapsLock::Send ^2 ; 
+CapsLock::Send {Insert} ; 
 
 ; cut copy paste, in ergoemacs keybinding with dvorak layout
 $F2::Send {F2}
-; $F3::Send {F3}
+$F3::Send {F3}
 $F4::Send {F4}
 
 ;────────── ────────── ────────── ────────── ──────────
@@ -221,6 +222,8 @@ Return
 #IfWinActive ahk_class CabinetWClass
 
 $XButton2::Send ^w ; close
+
+F10::Send ^w ; close window
 
 Numpad1::Send {Alt}vd ; Set view style to “detail”
 Numpad2::Send {Alt}vr{Enter} ;; Set view style to “large icons”
