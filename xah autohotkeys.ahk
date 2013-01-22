@@ -24,9 +24,8 @@ $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
-LWin::AppsKey
-RWin::AppsKey
-
+; activate Sound Level control (Volume Mixer)
+$^F8::Run "C:\Windows\System32\SndVol.exe"
 
 ; $F9::Run "launch or switch emacs.ahk"
 ; $F10::Run "launch or switch firefox.ahk"
@@ -74,12 +73,19 @@ $#Del::FileRecycleEmpty ; Win+Del to empty trash (recycle bin)
 ;; emacs
 #IfWinActive ahk_class Emacs
 
-CapsLock::Send {Insert} ; 
+LWin::AppsKey
+RWin::AppsKey
+CapsLock::Send {AppsKey}
+; AppsKey::Alt
 
 ; cut copy paste, in ergoemacs keybinding with dvorak layout
 $F2::Send {F2}
 $F3::Send {F3}
 $F4::Send {F4}
+
+; ; disable Alt+Tab
+; !Tab::Return
+; ; Alt & Tab::Return
 
 ;────────── ────────── ────────── ────────── ──────────
 ;; Mozilla Firefox
@@ -112,7 +118,7 @@ Send {Enter}
 Return
 
 ; open new tab and paste in url, go there
-$^F9::
+$^F2::
 {
 Send ^t
 sleep 200
@@ -163,7 +169,7 @@ Send {Enter}
 Return
 
 ; open new tab and paste in url, go there
-$^F9::
+$^F2::
 {
 Send ^t
 sleep 200
@@ -206,7 +212,7 @@ Send {Enter}
 Return
 
 ; open new tab and paste in url, go there
-$^F9::
+$^F2::
 {
 Send ^t
 sleep 200
@@ -231,7 +237,8 @@ Numpad2::Send {Alt}vr{Enter} ;; Set view style to “large icons”
 Numpad7::Run "launch or switch favorites folder.ahk"
 
 NumpadDiv::WinActivateBottom, ahk_class CabinetWClass
-NumpadMult::Send !{Tab} ; switch to previous app
+
+F11::WinActivateBottom, ahk_class CabinetWClass
 
 NumpadSub::Send ^w ; close window
 
@@ -251,6 +258,7 @@ $NumpadDot::Send {F7} ; put to folder
 
 Numpad0::Send ^m ; switch random img.
 m::Send ^m ; switch random img.
+Space::Send ^m ; switch random img.
 
 ; Numpad7::Send - ; zoom out
 ; Numpad8::Send ^h ; original size
@@ -301,7 +309,7 @@ Send {Enter}
 Return
 
 ; open new tab and paste in url, go there
-$^F9::
+$^F2::
 {
 Send ^t
 sleep 200
@@ -314,7 +322,7 @@ Return
 
 ;────────── ────────── ────────── ────────── ──────────
 ;; gimp
-#IfWinActive ahk_class gdkWindowToplevel 
+#IfWinActive ahk_class gdkWindowToplevel
 
 NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
