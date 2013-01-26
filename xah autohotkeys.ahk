@@ -20,22 +20,13 @@ DetectHiddenWindows, on
 
 ; CapsLock::Return
 
-$F2::Send ^x ; cut
-$F3::Send ^c ; copy
-$F4::Send ^v ; paste
-
 ; activate Sound Level control (Volume Mixer)
-$^F8::Run "C:\Windows\System32\SndVol.exe"
+$^Esc::Run "C:\Windows\System32\SndVol.exe"
 
 ; $F9::Run "launch or switch emacs.ahk"
 ; $F10::Run "launch or switch firefox.ahk"
 
 $NumpadAdd::Send !{Tab} ; switch to previous app
-
-$#NumpadAdd::Send {Volume_Up 5} ; increase sound level
-$#NumpadSub::Send {Volume_Down 5} ; decrease sound level
-
-$#Del::FileRecycleEmpty ; Win+Del to empty trash (recycle bin)
 
 ;────────── ────────── ────────── ────────── ──────────
 ; global hotkeys that start with Win key
@@ -78,19 +69,14 @@ RWin::AppsKey
 CapsLock::Send {AppsKey}
 ; AppsKey::Alt
 
-; cut copy paste, in ergoemacs keybinding with dvorak layout
-$F2::Send {F2}
-$F3::Send {F3}
-$F4::Send {F4}
-
-; ; disable Alt+Tab
-; !Tab::Return
-; ; Alt & Tab::Return
-
 ;────────── ────────── ────────── ────────── ──────────
 ;; Mozilla Firefox
 
 #IfWinActive ahk_class MozillaWindowClass
+
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
 
 NumpadDiv::Send ^{PgUp} ; previous tab
 NumpadMult::Send ^{PgDn} ; next tab
@@ -140,6 +126,10 @@ Return
 
 #IfWinActive ahk_class Chrome_WidgetWin_1
 
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
+
 NumpadDiv::Send ^{PgUp} ; previous tab
 NumpadMult::Send ^{PgDn} ; next tab
 NumpadSub::Send ^w ; close window
@@ -179,11 +169,14 @@ Send {Enter}
 }
 Return
 
-
 ;────────── ────────── ────────── ────────── ──────────
 ;; Windows Internet Explorer (IE)
 
 #IfWinActive ahk_class IEFrame
+
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
 
 $RButton::Send {MButton}
 $MButton::Send {RButton}
@@ -222,25 +215,23 @@ Send {Enter}
 }
 Return
 
-
 ;────────── ────────── ────────── ────────── ──────────
 ;; Windows Explorer (desktop)
 #IfWinActive ahk_class CabinetWClass
 
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
+
+$F5::RUN ::{645ff040-5081-101b-9f08-00aa002f954e} ; open trash (recycle bin)
+$F6::Send {Alt}vd ; Set view style to “detail”
+$F7::Send {Alt}vr{Enter} ;; Set view style to “large icons”
+$F8::Run "launch or switch favorites folder.ahk"
+$F9::WinActivateBottom, ahk_class CabinetWClass
+
+$F10::Send ^w ; close window
+
 $XButton2::Send ^w ; close
-
-F10::Send ^w ; close window
-
-Numpad1::Send {Alt}vd ; Set view style to “detail”
-Numpad2::Send {Alt}vr{Enter} ;; Set view style to “large icons”
-
-Numpad7::Run "launch or switch favorites folder.ahk"
-
-NumpadDiv::WinActivateBottom, ahk_class CabinetWClass
-
-F11::WinActivateBottom, ahk_class CabinetWClass
-
-NumpadSub::Send ^w ; close window
 
 ;────────── ────────── ────────── ────────── ──────────
 ;; image IrfanView hotkeys for fullscreen mode
@@ -282,6 +273,10 @@ NumpadSub::Send {Esc} ; close image
 ;; Opera
 #IfWinActive ahk_class OperaWindowClass
 
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
+
 NumpadDiv::Send ^+{F6} ; previous tab
 NumpadMult::Send ^{F6} ; next tab
 NumpadSub::Send ^w ; close window
@@ -319,10 +314,13 @@ Send {Enter}
 }
 Return
 
-
 ;────────── ────────── ────────── ────────── ──────────
 ;; gimp
 #IfWinActive ahk_class gdkWindowToplevel
+
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
 
 NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
@@ -404,6 +402,10 @@ F12::Send ^i ; show/hide inventory
 ;; Mathematica hotkeys
 #IfWinActive ahk_class NotebookFrame
 
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
+
 AppsKey & t::Send (){Left} ; insert paren
 AppsKey & h::Send {{}{}}{Left} ; insert braces
 AppsKey & n::Send []{Left}     ; insert square brackets
@@ -417,8 +419,12 @@ NumpadSub::Send ^w ; close window
 
 F6::Send SbapCW2
 
-
 ;────────── ────────── ────────── ────────── ──────────
 ;;  Windows PowerShell
 #IfWinActive ahk_class ConsoleWindowClass
+
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
+
 F6::Send .\apps\emacs-24.2\bin\runemacs.exe
