@@ -84,13 +84,14 @@ NumpadSub::Send ^w ; close window
 
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
-F10::Send ^w ; close window
 
 $RButton::Send {MButton}
 $MButton::Send {RButton}
 $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
+
+$Del::Send ^w ; close window
 
 ; open new tab and paste in url, go there
 Numpad9::
@@ -111,6 +112,15 @@ sleep 200
 Send ^v
 sleep 100
 Send {Enter}
+}
+Return
+
+; copy url field
+$^F3::
+{
+Send !d
+sleep 200
+Send ^c
 }
 Return
 
@@ -136,7 +146,8 @@ NumpadSub::Send ^w ; close window
 
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
-F10::Send ^w ; close window
+
+$Del::Send ^w ; close window
 
 $Insert::WinActivateBottom, ahk_class Chrome_WidgetWin_1
 
@@ -169,6 +180,15 @@ Send {Enter}
 }
 Return
 
+; copy url field
+$^F3::
+{
+Send !d
+sleep 200
+Send ^c
+}
+Return
+
 ;────────── ────────── ────────── ────────── ──────────
 ;; Windows Internet Explorer (IE)
 
@@ -189,9 +209,10 @@ NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
 NumpadSub::Send ^w ; close window
 
+$Del::Send ^w ; close window
+
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
-F10::Send ^w ; close window
 
 ; open new tab and paste in url, go there
 Numpad9::
@@ -229,7 +250,7 @@ $F7::Send {Alt}vr{Enter} ;; Set view style to “large icons”
 $F8::Run "launch or switch favorites folder.ahk"
 $F9::WinActivateBottom, ahk_class CabinetWClass
 
-$F10::Send ^w ; close window
+$Del::Send ^w ; close window
 
 $XButton2::Send ^w ; close
 
@@ -283,7 +304,8 @@ NumpadSub::Send ^w ; close window
 
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
-F10::Send ^w ; close window
+
+$Del::Send ^w ; close window
 
 $RButton::Send {MButton}
 $MButton::Send {RButton}
@@ -328,7 +350,8 @@ NumpadSub::Send ^w ; close window
 
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
-F10::Send ^w ; close window
+
+$Del::Send ^w ; close window
 
 $XButton2::Send ^w ; close
 
@@ -420,7 +443,7 @@ NumpadSub::Send ^w ; close window
 F6::Send SbapCW2
 
 ;────────── ────────── ────────── ────────── ──────────
-;;  Windows PowerShell
+;;  Windows PowerShell console
 #IfWinActive ahk_class ConsoleWindowClass
 
 $F2::Send ^x ; cut
@@ -428,3 +451,17 @@ $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
 F6::Send .\apps\emacs-24.2\bin\runemacs.exe
+
+;────────── ────────── ────────── ────────── ──────────
+;; Windows PowerShell ISE
+
+#IfWinActive ahk_class HwndWrapper[PowerShell_ISE.exe;;3d7e57f0-ab7e-4dc5-95aa-e03533c06ba2]
+
+
+$F2::Send ^x ; cut
+$F3::Send ^c ; copy
+$F4::Send ^v ; paste
+
+F6::Send .\apps\emacs-24.2\bin\runemacs.exe
+
+
