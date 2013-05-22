@@ -237,14 +237,14 @@ Send {Enter}
 Return
 
 ;────────── ────────── ────────── ────────── ──────────
-;; Windows Explorer (desktop)
+;; Windows Explorer (folder viewer)
 #IfWinActive ahk_class CabinetWClass
 
 $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
-$F5::RUN ::{645ff040-5081-101b-9f08-00aa002f954e} ; open trash (recycle bin)
+;$F5::RUN ::{645ff040-5081-101b-9f08-00aa002f954e} ; open trash (recycle bin)
 $F6::Send {Alt}vd ; Set view style to “detail”
 $F7::Send {Alt}vr{Enter} ;; Set view style to “large icons”
 $F8::Run "launch or switch favorites folder.ahk"

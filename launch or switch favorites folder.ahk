@@ -14,7 +14,7 @@ If WinExist("Links")
 }
 Else
 {
-  Run "C:\Users\h3\Links"
+  Run "C:\Users\xah\Links"
     WinActivate
   }
 Return
