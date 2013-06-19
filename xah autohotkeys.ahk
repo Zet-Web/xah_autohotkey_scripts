@@ -85,13 +85,16 @@ NumpadSub::Send ^w ; close window
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
 
+Home::Send ^{PgUp} ; previous tab
+End::Send ^{PgDn} ; next tab
+
 $RButton::Send {MButton}
 $MButton::Send {RButton}
 $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
 
-$Del::Send ^w ; close window
+$F9::Send ^w ; close window
 
 ; open new tab and paste in url, go there
 Numpad9::
@@ -147,7 +150,10 @@ NumpadSub::Send ^w ; close window
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
 
-$Del::Send ^w ; close window
+Home::Send ^{PgUp} ; previous tab
+End::Send ^{PgDn} ; next tab
+
+$F9::Send ^w ; close window
 
 $Insert::WinActivateBottom, ahk_class Chrome_WidgetWin_1
 
@@ -209,10 +215,13 @@ NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
 NumpadSub::Send ^w ; close window
 
-$Del::Send ^w ; close window
+$F9::Send ^w ; close window
 
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
+
+Home::Send ^{PgUp} ; previous tab
+End::Send ^{PgDn} ; next tab
 
 ; open new tab and paste in url, go there
 Numpad9::
@@ -248,9 +257,9 @@ $F4::Send ^v ; paste
 $F6::Send {Alt}vd ; Set view style to “detail”
 $F7::Send {Alt}vr{Enter} ;; Set view style to “large icons”
 $F8::Run "launch or switch favorites folder.ahk"
-$F9::WinActivateBottom, ahk_class CabinetWClass
+$F10::WinActivateBottom, ahk_class CabinetWClass
 
-$Del::Send ^w ; close window
+$F9::Send ^w ; close window
 
 $XButton2::Send ^w ; close
 
@@ -305,7 +314,10 @@ NumpadSub::Send ^w ; close window
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
 
-$Del::Send ^w ; close window
+Home::Send ^{PgUp} ; previous tab
+End::Send ^{PgDn} ; next tab
+
+$F9::Send ^w ; close window
 
 $RButton::Send {MButton}
 $MButton::Send {RButton}
@@ -351,7 +363,7 @@ NumpadSub::Send ^w ; close window
 F11::Send ^{PgUp} ; previous tab
 F12::Send ^{PgDn} ; next tab
 
-$Del::Send ^w ; close window
+$F9::Send ^w ; close window
 
 $XButton2::Send ^w ; close
 
@@ -375,13 +387,13 @@ $XButton1::Send ^!+9 ; show hide volume (objects)
 NumpadDiv::Send !{Left} ; previous tab
 NumpadMult::Send !{Right} ; next tab
 
-Numpad1::Send ^!+9 ; show hide volume (objects)
-Numpad3::Send ^!+= ; show/hide particles
-Numpad4::Send ^+r ; show hide wireframe
-Numpad5::Send ^+f ; show/hide friend list
-Numpad6::Send ^!t ; show/hide alpha (transparent) objects
-Numpad8::Send ^h ; show/hide local chat
-Numpad9::Send ^+a  ; Emerald toggle sim radar; or who's nearby
+; Numpad1::Send ^!+9 ; show hide volume (objects)
+; Numpad3::Send ^!+= ; show/hide particles
+; Numpad4::Send ^+r ; show hide wireframe
+; Numpad5::Send ^+f ; show/hide friend list
+; Numpad6::Send ^!t ; show/hide alpha (transparent) objects
+; Numpad8::Send ^h ; show/hide local chat
+; Numpad9::Send ^+a  ; Emerald toggle sim radar; or who's nearby
 
 ; ; zoom normal
 ; $NumpadEnter::Send ^9
