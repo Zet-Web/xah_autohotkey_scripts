@@ -217,11 +217,8 @@ NumpadSub::Send ^w ; close window
 
 $F9::Send ^w ; close window
 
-F11::Send ^{PgUp} ; previous tab
-F12::Send ^{PgDn} ; next tab
-
-Home::Send ^{PgUp} ; previous tab
-End::Send ^{PgDn} ; next tab
+F11::Send ^+{Tab} ; previous tab
+F12::Send ^{Tab} ; next tab
 
 ; open new tab and paste in url, go there
 Numpad9::
