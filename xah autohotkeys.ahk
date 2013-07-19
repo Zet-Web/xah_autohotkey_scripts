@@ -26,7 +26,6 @@ $^Esc::Run "C:\Windows\System32\SndVol.exe"
 ; $F9::Run "launch or switch emacs.ahk"
 ; $F10::Run "launch or switch firefox.ahk"
 
-$NumpadAdd::Send !{Tab} ; switch to previous app
 
 ;────────── ────────── ────────── ────────── ──────────
 ; global hotkeys that start with Win key
@@ -78,10 +77,6 @@ $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
-NumpadDiv::Send ^{PgUp} ; previous tab
-NumpadMult::Send ^{PgDn} ; next tab
-NumpadSub::Send ^w ; close window
-
 Home::Send ^{PgUp} ; previous tab
 End::Send ^{PgDn} ; next tab
 
@@ -91,18 +86,9 @@ $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
 
-$F9::Send ^w ; close window
+$F12::Send ^w ; close window
 
-; open new tab and paste in url, go there
-Numpad9::
-{
-Send ^t
-sleep 200
-Send ^v
-sleep 100
-Send {Enter}
-}
-Return
+
 
 ; open new tab and paste in url, go there
 $^F2::
@@ -140,14 +126,10 @@ $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
-NumpadDiv::Send ^{PgUp} ; previous tab
-NumpadMult::Send ^{PgDn} ; next tab
-NumpadSub::Send ^w ; close window
-
 Home::Send ^{PgUp} ; previous tab
 End::Send ^{PgDn} ; next tab
 
-$F9::Send ^w ; close window
+$F12::Send ^w ; close window
 
 $Insert::WinActivateBottom, ahk_class Chrome_WidgetWin_1
 
@@ -158,16 +140,7 @@ $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
 
-; open new tab and paste in url, go there
-Numpad9::
-{
-Send ^t
-sleep 200
-Send ^v
-sleep 100
-Send {Enter}
-}
-Return
+
 
 ; open new tab and paste in url, go there
 $^F2::
@@ -205,25 +178,12 @@ $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
 
-NumpadDiv::Send ^+{Tab} ; previous tab
-NumpadMult::Send ^{Tab} ; next tab
-NumpadSub::Send ^w ; close window
-
-$F9::Send ^w ; close window
+$F12::Send ^w ; close window
 
 Home::Send ^+{Tab} ; previous tab
 End::Send ^{Tab} ; next tab
 
-; open new tab and paste in url, go there
-Numpad9::
-{
-Send ^t
-sleep 200
-Send ^v
-sleep 100
-Send {Enter}
-}
-Return
+
 
 ; open new tab and paste in url, go there
 $^F2::
@@ -250,7 +210,7 @@ $F7::Send {Alt}vr{Enter} ;; Set view style to “large icons”
 $F8::Run "launch or switch favorites folder.ahk"
 $F10::WinActivateBottom, ahk_class CabinetWClass
 
-$F9::Send ^w ; close window
+$F12::Send ^w ; close window
 
 $XButton2::Send ^w ; close
 
@@ -272,9 +232,7 @@ Numpad0::Send ^m ; switch random img.
 m::Send ^m ; switch random img.
 Space::Send ^m ; switch random img.
 
-; Numpad7::Send - ; zoom out
-; Numpad8::Send ^h ; original size
-; Numpad9::Send {=} ; zoom in
+
 
 NumpadSub::Send {Esc} ; close image
 
@@ -298,14 +256,10 @@ $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
-NumpadDiv::Send ^+{F6} ; previous tab
-NumpadMult::Send ^{F6} ; next tab
-NumpadSub::Send ^w ; close window
-
 Home::Send ^{PgUp} ; previous tab
 End::Send ^{PgDn} ; next tab
 
-$F9::Send ^w ; close window
+$F12::Send ^w ; close window
 
 $RButton::Send {MButton}
 $MButton::Send {RButton}
@@ -314,16 +268,7 @@ $XButton2::Send ^w ; close
 
 $F1::Send ^a ; select all
 
-; open new tab and paste in url, go there
-Numpad9::
-{
-Send ^t
-sleep 200
-Send ^v
-sleep 100
-Send {Enter}
-}
-Return
+
 
 ; open new tab and paste in url, go there
 $^F2::
@@ -344,11 +289,7 @@ $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
-NumpadDiv::Send ^+{Tab} ; previous tab
-NumpadMult::Send ^{Tab} ; next tab
-NumpadSub::Send ^w ; close window
-
-$F9::Send ^w ; close window
+$F12::Send ^w ; close window
 
 $XButton2::Send ^w ; close
 
@@ -360,8 +301,6 @@ $XButton2::Send ^w ; close
 #IfWinActive ahk_class Second Life
 
 ; 〔Second Life combat keys, for arrow users.ahk〕
-
-NumpadSub::Send ^w ; close window
 
 ^Numpad9::Run "Second Life combat setup.ahk" ; combat setup
 
@@ -430,8 +369,6 @@ AppsKey & t::Send (){Left} ; insert paren
 AppsKey & h::Send {{}{}}{Left} ; insert braces
 AppsKey & n::Send []{Left}     ; insert square brackets
 Insert::Send ^{F6} ; insert switches window
-
-NumpadSub::Send ^w ; close window
 
 ;────────── ────────── ────────── ────────── ──────────
 ;; cygwin, mintty
