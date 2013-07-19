@@ -82,9 +82,6 @@ NumpadDiv::Send ^{PgUp} ; previous tab
 NumpadMult::Send ^{PgDn} ; next tab
 NumpadSub::Send ^w ; close window
 
-F11::Send ^{PgUp} ; previous tab
-F12::Send ^{PgDn} ; next tab
-
 Home::Send ^{PgUp} ; previous tab
 End::Send ^{PgDn} ; next tab
 
@@ -146,9 +143,6 @@ $F4::Send ^v ; paste
 NumpadDiv::Send ^{PgUp} ; previous tab
 NumpadMult::Send ^{PgDn} ; next tab
 NumpadSub::Send ^w ; close window
-
-F11::Send ^{PgUp} ; previous tab
-F12::Send ^{PgDn} ; next tab
 
 Home::Send ^{PgUp} ; previous tab
 End::Send ^{PgDn} ; next tab
@@ -217,8 +211,8 @@ NumpadSub::Send ^w ; close window
 
 $F9::Send ^w ; close window
 
-F11::Send ^+{Tab} ; previous tab
-F12::Send ^{Tab} ; next tab
+Home::Send ^+{Tab} ; previous tab
+End::Send ^{Tab} ; next tab
 
 ; open new tab and paste in url, go there
 Numpad9::
@@ -308,9 +302,6 @@ NumpadDiv::Send ^+{F6} ; previous tab
 NumpadMult::Send ^{F6} ; next tab
 NumpadSub::Send ^w ; close window
 
-F11::Send ^{PgUp} ; previous tab
-F12::Send ^{PgDn} ; next tab
-
 Home::Send ^{PgUp} ; previous tab
 End::Send ^{PgDn} ; next tab
 
@@ -356,9 +347,6 @@ $F4::Send ^v ; paste
 NumpadDiv::Send ^+{Tab} ; previous tab
 NumpadMult::Send ^{Tab} ; next tab
 NumpadSub::Send ^w ; close window
-
-F11::Send ^{PgUp} ; previous tab
-F12::Send ^{PgDn} ; next tab
 
 $F9::Send ^w ; close window
 
@@ -466,11 +454,9 @@ F6::Send .\apps\emacs-24.2\bin\runemacs.exe
 
 #IfWinActive ahk_class HwndWrapper[PowerShell_ISE.exe;;3d7e57f0-ab7e-4dc5-95aa-e03533c06ba2]
 
-
 $F2::Send ^x ; cut
 $F3::Send ^c ; copy
 $F4::Send ^v ; paste
 
 F6::Send .\apps\emacs-24.2\bin\runemacs.exe
-
 
